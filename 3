@@ -1,0 +1,61 @@
+깃 설치 
+
+git bash에서 
+
+명령어 
+
+cd (chage directory)
+
+
+cd [이동할 경로]
+
+ex) cd / : root로 이동
+ex) cd log : 현재 디렉토리 내 log 디렉토리로 이동
+ex) cd /app/bin : /app/bin 디렉토리로 이동
+
+절대 경로는 모든 경로를 처음부터 끝까지 나타낸 것을 뜻한다. 예를 들어 "/home/app/bin/logs" 등이다.
+상대 경로는 현재 위치한 폴더를 기준으로 위치한 경로를 뜻한다.
+
+예를 들어 다음과 같이 사용할 수 있다.
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+cd .. : 상위 디렉토리로 이동한다. 예를 들어 현재 위치가 /app/bin/logs 라면 /app/bin으로 이동한다.
+cd . : 현재 위치로 이동한다. 즉 움직이지 않고 새로고침한다고 보면된다.
+cd - : 이전에 위치했던 폴더로 이동한다. 윈도우의 뒤로가기 기능과 같다.
+cd / : root 디렉토리로 이동한다.
+cd ~ : 홈 디렉토리로 이동한다.
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+설정변수 core.autocrlf를 true로 설정
+
+    윈도에서 autocrlf를 true로 설정
+    맥과 리눅스에서 input으로 설정 
+
+줄바꿈 설정이 필요한 이유
+
+    플랫폼에 따라 줄 끝의 처리 방법이 다르기 때문이다.
+    windows : CR(Carrige Return)와 LF(Line Feed)로 한 줄의 끝을 인식한다.
+    mac/linux : LF(Line Feed)로 한 줄의 끝을 인식한다.
+    
+$ git config --global core.autocrlf true   줄바꿈 처리를 자동으로 지정
+$ git config --get core.autocrlf           줄바꿈 처리 방법을 조회●참조
+
+
+
+설정변수 core.safecrlf를 false로 설정해야 한다. 
+이 설정이 잘못되면 명령 add나 commit에서 다음과 같은 줄바꿈 경고 메세지가 발생한다.
+맥과 리눅스에서는 input으로 설정해야 함 명령 add나 commit에서 심각한 오류가 발생할 수 있음 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+$ git add file.txt
+warning: in the working copy of 'file.txt', LF will be 
+replaced by CRLF the next time Git touches it 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+↑ 와 같은 오류가 발생할 수 있음 
+그렇기에 false로 지정한다. 눈에 거슬리기에
+
+$ git config --global core.safecrlf false  줄바꿈 안정 설정을 false로 지정
+$ git config --get core.safecrlf           줄바꿈 안정 설정을 조회●참조
+ 
+
+
+출처: https://code-lab1.tistory.com/302 [코드 연구소:티스토리]
+
