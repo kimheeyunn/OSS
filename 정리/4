@@ -37,10 +37,33 @@ status
     녹색 표시는 스테이징 영역을 의미
     최근 커밋과 비교해서 스테이징 영역의 파일이 수정된 것을 의미
 
-모두 커밋 이력 보기
-  $ git log
-  • --oneline --graph --all -n
-
-특정한 커밋 이력 보기
-  $ git show [HEAD]
-• --oneline
+                          모두 커밋 이력 보기
+                            $ git log
+                            • --oneline --graph --all -n
+                          
+                          특정한 커밋 이력 보기
+                            $ git show [HEAD]
+                          • --oneline
+                
+                          저장소 생성
+                          $ git init basic
+                          
+                          깃 저장소에 저장
+                          $ git add, commit
+                          
+                          모두 커밋 이력 보기
+                          $ git log
+                          --oneline --graph --all -n
+                          
+                          측정한 커밋 이력 보기
+                          $ git show [HEAD]
+                          --oneline
+                          
+                          바로 이전 버전으로 가기
+                          $ git checkout HEAD~
+                          
+                          다시 최신 버전으로 돌아오기
+                          $ git checkout main
+                          
+                          다시 checkout 이전으로 돌아오기
+                          $ git checkout 
