@@ -1,1 +1,46 @@
+$ git add : 파일을 Working tree -> Staging Area로 이동(복사)
 
+
+$ git commit : Staging Area에 준비된 파일 -> Git repository(버전관리)로 이동(복사)
+
+$ git status [--long] : 현재의 상태 표시, 기본 값(default value)
+$ git status [--short |-s] : 현재의 상태를 간단히 표시 
+$ git config --gloabal --edit : 도움말 보기 
+
+
+
+깃 저장소 생성과 버전관리 과정
+$ git init basic
+$ git add hello.txt
+$ git commit –m A
+$ git status
+$ git log --oneline
+$ git show --onelin
+
+git init basic
+add, commit
+status
+파일 처음 생성
+
+  • Untracked file
+      붉은 색 표시는 작업 디렉토리를 의미
+
+처음 add한 파일
+  • A new file
+      녹색 표시는 스테이징 영역을 의미
+다시 수정한 파일
+  • Modified file
+      붉은 색 표시는 작업 디렉토리를 의미
+      스테이징 영역과 비교해서 작업 디렉토리의 파일이 수정된 것을 의미
+수정한 파일을 add
+  • Modified file 
+    녹색 표시는 스테이징 영역을 의미
+    최근 커밋과 비교해서 스테이징 영역의 파일이 수정된 것을 의미
+
+모두 커밋 이력 보기
+  $ git log
+  • --oneline --graph --all -n
+
+특정한 커밋 이력 보기
+  $ git show [HEAD]
+• --oneline
